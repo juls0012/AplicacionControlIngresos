@@ -16,7 +16,7 @@ import java.sql.ResultSet;
  */
 public class ConexionDB {
     
-    String strConexionDB = "jdbc:sqlite:/home/usuario/Documents/movimiento";
+    String strConexionDB = "jdbc:sqlite:/home/usuario/NetBeansProjects/ControlIngresos/movimiento";
     Connection conn = null;
     
     
