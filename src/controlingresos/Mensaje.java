@@ -9,18 +9,45 @@ package controlingresos;
  * @author usuario
  */
 public class Mensaje extends javax.swing.JFrame {
+    AbstactFactory metodo = new AbstactFactory();
 
-    
+    public String mensaje;
 
     /**
      * Creates new form Mensaje
      */
-    public Mensaje() {
-        
+    public Mensaje(String mensaje) {
+        this.mensaje = mensaje;
         initComponents();
+        this.setLocationRelativeTo(null);
     }
     
-    
+    public void getBack(){
+        if(mensaje.equals("VistaCancelarMovimiento")){
+            System.out.println("regresando a VistaCancelarMovimiento");
+            VistaCancelarMovimiento crearMov = metodo.getVistaCanMov();
+            crearMov.setVisible(true);
+            this.setVisible(false);
+            
+            
+        }else if(mensaje.equals("VistaIntroducirMovimiento")){
+            System.out.println("regresando a VistaIntroducirMovimiento");
+             VistaIntroducirMovimiento crearMov = metodo.getVistaIntroMov();
+            crearMov.setVisible(false);
+            this.setVisible(false);
+            
+        }else if(mensaje.equals("VistaConsultaIntervalo")){
+             VistaConsultaIntervalo crearMov = metodo.getVistaConInt();
+            crearMov.setVisible(true);
+            this.setVisible(false);
+            
+        }else if(mensaje.equals("VistaSaludFinanciera")){
+            System.out.println("regresando a VistaSaludFinanciera");
+            VistaSaludFinanciera crearMov =  metodo.getVistaSalud();
+            crearMov.setVisible(true);
+            this.setVisible(false);
+        }
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -39,6 +66,11 @@ public class Mensaje extends javax.swing.JFrame {
         jLabel1.setText("La accion a sido completada correctamente");
 
         jButton1.setText("OK");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -66,6 +98,11 @@ public class Mensaje extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        getBack();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments

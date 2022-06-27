@@ -19,6 +19,7 @@ public class VistaIntroducirMovimiento extends javax.swing.JFrame {
     public VistaIntroducirMovimiento() {
         initComponents();
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        this.setLocationRelativeTo(null);
         
     }
 
@@ -214,8 +215,10 @@ public class VistaIntroducirMovimiento extends javax.swing.JFrame {
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
         // TODO add your handling code here:
         Principal accederMetodo =  metodo.getPrincipal();
+       
         accederMetodo.setVisible(true);
-        this.setVisible(false);
+         this.setVisible(false);
+        
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void conceptoMovActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_conceptoMovActionPerformed
@@ -230,6 +233,7 @@ public class VistaIntroducirMovimiento extends javax.swing.JFrame {
     private void btnCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearActionPerformed
         // TODO add your handling code here:
         ConexionDB conexiondb = ConexionDB.getInstance();
+        String errorDB;
         String dia = String.valueOf((int) jSpinner1.getValue());
         String mes = String.valueOf((int) jSpinner2.getValue());
         String anio = String.valueOf((int) jSpinner3.getValue());
@@ -249,45 +253,13 @@ public class VistaIntroducirMovimiento extends javax.swing.JFrame {
         
         conexiondb.ejecutarSentencia(sentenciaSQL);
         
-        System.out.println("tipo de movimiento" + mov + ", fecha:" + fecha + " concepto:" + concepto + " Monto:" + monto + " descripcion: " + descripcion);
-        
-         
+        new Mensaje("VistaIntroducirMovimiento").setVisible(true);
     }//GEN-LAST:event_btnCrearActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VistaIntroducirMovimiento.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VistaIntroducirMovimiento.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VistaIntroducirMovimiento.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VistaIntroducirMovimiento.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new VistaIntroducirMovimiento().setVisible(true);
-            }
-        });
-    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancelar;

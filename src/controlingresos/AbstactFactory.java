@@ -32,9 +32,5 @@ public class AbstactFactory {
         
     }
     
-     public static Mensaje getMensaje(){
-        return new Mensaje();
-        
-    }
     
 }

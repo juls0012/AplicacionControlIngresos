@@ -25,8 +25,9 @@ public class VistaCancelarMovimiento extends javax.swing.JFrame {
         String[] titulos = {"id","Tipo movimiento","Concepto","FECHA","Monto","Descripcion"};
         modelo = new DefaultTableModel(null,titulos);
         jTable1.setModel(modelo);
-        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -44,15 +45,6 @@ public class VistaCancelarMovimiento extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         btnIngreso = new javax.swing.JButton();
         btnEgreso = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
-        busConcepto = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        jSpinner1 = new javax.swing.JSpinner();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jSpinner2 = new javax.swing.JSpinner();
-        jLabel7 = new javax.swing.JLabel();
-        jSpinner3 = new javax.swing.JSpinner();
         btnCancelar = new javax.swing.JButton();
         btnBuscar = new javax.swing.JButton();
         btnBorrar = new javax.swing.JButton();
@@ -95,23 +87,7 @@ public class VistaCancelarMovimiento extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setText("Concepto");
-
-        jLabel4.setText("Fecha");
-
-        jSpinner1.setModel(new javax.swing.SpinnerNumberModel(1, 1, 31, 1));
-
-        jLabel5.setText("Dia");
-
-        jLabel6.setText("Mes");
-
-        jSpinner2.setModel(new javax.swing.SpinnerNumberModel(1, 1, 12, 1));
-
-        jLabel7.setText("Anio");
-
-        jSpinner3.setModel(new javax.swing.SpinnerNumberModel(2000, 0, 2050, 1));
-
-        btnCancelar.setText("Cancelar");
+        btnCancelar.setText("Pagina Principal");
         btnCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCancelarActionPerformed(evt);
@@ -144,40 +120,21 @@ public class VistaCancelarMovimiento extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(31, 31, 31)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel4)))
+                        .addComponent(jLabel2))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(104, 104, 104)
-                        .addComponent(jLabel5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(138, 138, 138)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(busConcepto)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(btnIngreso)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(btnEgreso))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jLabel6))
-                                    .addComponent(btnCancelar))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(btnBuscar)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(btnBorrar))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jSpinner2, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel7)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jSpinner3, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 107, Short.MAX_VALUE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(btnCancelar)
+                                .addGap(31, 31, 31)
+                                .addComponent(btnBuscar)
+                                .addGap(38, 38, 38)
+                                .addComponent(btnBorrar)))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 574, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(17, 17, 17))
         );
@@ -187,36 +144,21 @@ public class VistaCancelarMovimiento extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(27, 27, 27))
-                    .addGroup(layout.createSequentialGroup()
+                        .addGap(80, 80, 80)
                         .addComponent(jLabel2)
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnIngreso)
                             .addComponent(btnEgreso))
-                        .addGap(62, 62, 62)
-                        .addComponent(jLabel3)
-                        .addGap(11, 11, 11)
-                        .addComponent(busConcepto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(61, 61, 61)
-                        .addComponent(jLabel4)
-                        .addGap(14, 14, 14)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel6)
-                            .addComponent(jSpinner2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel7)
-                            .addComponent(jSpinner3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(99, 99, 99)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnCancelar)
                             .addComponent(btnBuscar)
-                            .addComponent(btnBorrar))
-                        .addGap(36, 36, 36))))
+                            .addComponent(btnBorrar))))
+                .addGap(27, 27, 27))
         );
 
         pack();
@@ -232,21 +174,25 @@ public class VistaCancelarMovimiento extends javax.swing.JFrame {
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         // TODO add your handling code here:
-       while(modelo.getRowCount()>0){
+       String sentenciaSQL = "";
+        while(modelo.getRowCount()>0){
             modelo.removeRow(0);
         }
-        System.out.println(movimiento);
+        
+        
         
         try {
-            String sentenciaSQL = String.format("SELECT * FROM movimientos2 WHERE tipoMovimiento = '%s'",movimiento);
+            if(movimiento == null){
+                sentenciaSQL = "SELECT * FROM movimientos2";
+                
+            }else if(movimiento != null){
+                sentenciaSQL = String.format("SELECT * FROM movimientos2 WHERE tipoMovimiento = '%s'",movimiento);
+                movimiento = null;
+            }
             ResultSet resultado = conexion.consultarRegistros(sentenciaSQL);
             
             while (resultado.next()){
-                System.out.println(resultado.getString("tipoMovimiento"));
-                System.out.println(resultado.getString("concepto"));
-                System.out.println(resultado.getString("fecha"));
-                System.out.println(resultado.getString("monto"));
-                System.out.println(resultado.getString("descripcion"));
+              
                 
                 Object[] usuario = {resultado.getString("id"),resultado.getString("tipoMovimiento"),resultado.getString("concepto"),resultado.getString("fecha"),
                 resultado.getString("monto"),resultado.getString("descripcion")};
@@ -284,15 +230,17 @@ public class VistaCancelarMovimiento extends javax.swing.JFrame {
     private void btnBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarActionPerformed
         // TODO add your handling code here:
         
-        
+      
          
         String sentenciaSQL = String.format("DELETE FROM movimientos2 WHERE id = '%s'",id);
         
         conexion.ejecutarSentencia(sentenciaSQL);
         
-       AbstactFactory metodo = new AbstactFactory();
-       Mensaje mens = metodo.getMensaje();
-       mens.setVisible(true);
+//        AbstactFactory metodo = new AbstactFactory();
+//        Mensaje mens = metodo.getMensaje();
+//        mens.setVisible(true);
+          this.setVisible(false);
+          new Mensaje("VistaCancelarMovimiento").setVisible(true);
         
          
     }//GEN-LAST:event_btnBorrarActionPerformed
@@ -300,37 +248,7 @@ public class VistaCancelarMovimiento extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VistaCancelarMovimiento.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VistaCancelarMovimiento.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VistaCancelarMovimiento.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VistaCancelarMovimiento.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new VistaCancelarMovimiento().setVisible(true);
-            }
-        });
-    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBorrar;
@@ -338,18 +256,9 @@ public class VistaCancelarMovimiento extends javax.swing.JFrame {
     private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnEgreso;
     private javax.swing.JButton btnIngreso;
-    private javax.swing.JTextField busConcepto;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JSpinner jSpinner1;
-    private javax.swing.JSpinner jSpinner2;
-    private javax.swing.JSpinner jSpinner3;
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }

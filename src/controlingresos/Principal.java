@@ -4,6 +4,10 @@
  */
 package controlingresos;
 
+import java.awt.Color;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
 /**
  *
  * @author usuario
@@ -11,12 +15,18 @@ package controlingresos;
 public class Principal extends javax.swing.JFrame {
     AbstactFactory metodo = new AbstactFactory();
     VistaSaludFinanciera metodoSalud = new VistaSaludFinanciera();
+    
 
     /**
      * Creates new form Principal
      */
     public Principal() {
+        
         initComponents();
+        this.setLocationRelativeTo(null);
+        ConexionDB conexiondb = ConexionDB.getInstance();
+        
+        
         
     }
    
@@ -36,6 +46,7 @@ public class Principal extends javax.swing.JFrame {
         btnConsultaIntervalo = new javax.swing.JButton();
         btnSaludFinanciera = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        cerrarApp = new javax.swing.JButton();
 
         jButton1.setText("jButton1");
 
@@ -71,6 +82,13 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel1.setText("Control de Ingresos/Egresos");
 
+        cerrarApp.setText("Cerrar aplicacion");
+        cerrarApp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cerrarAppActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -88,7 +106,10 @@ public class Principal extends javax.swing.JFrame {
                         .addComponent(btnConsultaIntervalo))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(185, 185, 185)
-                        .addComponent(btnSaludFinanciera)))
+                        .addComponent(btnSaludFinanciera))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(215, 215, 215)
+                        .addComponent(cerrarApp)))
                 .addGap(46, 161, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -104,7 +125,9 @@ public class Principal extends javax.swing.JFrame {
                 .addComponent(btnConsultaIntervalo)
                 .addGap(64, 64, 64)
                 .addComponent(btnSaludFinanciera)
-                .addContainerGap(108, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
+                .addComponent(cerrarApp)
+                .addGap(35, 35, 35))
         );
 
         pack();
@@ -142,6 +165,12 @@ public class Principal extends javax.swing.JFrame {
         crearMov.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnSaludFinancieraActionPerformed
+
+    private void cerrarAppActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cerrarAppActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+       
+    }//GEN-LAST:event_cerrarAppActionPerformed
 
     /**
      * @param args the command line arguments
@@ -183,6 +212,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton btnConsultaIntervalo;
     private javax.swing.JButton btnCrearMovimiento;
     private javax.swing.JButton btnSaludFinanciera;
+    private javax.swing.JButton cerrarApp;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables

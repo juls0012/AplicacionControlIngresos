@@ -48,6 +48,10 @@
                       <EmptySpace min="-2" pref="185" max="-2" attributes="0"/>
                       <Component id="btnSaludFinanciera" min="-2" max="-2" attributes="0"/>
                   </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="215" max="-2" attributes="0"/>
+                      <Component id="cerrarApp" min="-2" max="-2" attributes="0"/>
+                  </Group>
               </Group>
               <EmptySpace min="46" pref="161" max="32767" attributes="0"/>
           </Group>
@@ -66,7 +70,9 @@
               <Component id="btnConsultaIntervalo" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
               <Component id="btnSaludFinanciera" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="108" max="32767" attributes="0"/>
+              <EmptySpace pref="49" max="32767" attributes="0"/>
+              <Component id="cerrarApp" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -108,6 +114,14 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Control de Ingresos/Egresos"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="cerrarApp">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Cerrar aplicacion"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cerrarAppActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
